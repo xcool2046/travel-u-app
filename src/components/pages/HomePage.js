@@ -216,19 +216,19 @@ const StatLabel = styled.div`
 const HomePage = () => {
   const features = [
     {
-      icon: '🤖',
+      icon: '🤝',
       title: '智配同行',
       description: '基于兴趣爱好、旅行偏好和时间安排，为您精准匹配志同道合的旅行伙伴，让每次出行都充满惊喜。',
       action: '开始匹配'
     },
     {
-      icon: '🎯',
+      icon: '🌟',
       title: '智推探地',
       description: 'AI智能分析您的偏好，结合实时天气、热门景点和用户评价，为您推荐最适合的旅行目的地。',
       action: '探索目的地'
     },
     {
-      icon: '🧠',
+      icon: '🗺️',
       title: '智行规划',
       description: '自动生成个性化旅行路线，包含交通、住宿、美食推荐，让您的旅行规划变得轻松简单。',
       action: '制定计划'

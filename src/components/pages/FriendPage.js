@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import ChatBox from '../ChatBox';
 
 const FriendContainer = styled.div`
   height: 100%;
@@ -148,6 +149,7 @@ const AvatarContainer = styled.div`
 
 const FriendPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedFriend, setSelectedFriend] = useState(null);
 
   // 模拟好友数据
   const friends = [
@@ -207,6 +209,14 @@ const FriendPage = () => {
     friend.lastMessage.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleFriendClick = (friend) => {
+    setSelectedFriend(friend);
+  };
+
+  const handleCloseChatBox = () => {
+    setSelectedFriend(null);
+  };
+
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { 
@@ -240,6 +250,7 @@ const FriendPage = () => {
             transition={{ delay: index * 0.1 }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => handleFriendClick(friend)}
           >
             <AvatarContainer>
               <Avatar src={friend.avatar} alt={friend.name} />
@@ -253,6 +264,13 @@ const FriendPage = () => {
           </FriendItem>
         ))}
       </FriendList>
+
+      {selectedFriend && (
+        <ChatBox 
+          friend={selectedFriend} 
+          onClose={handleCloseChatBox}
+        />
+      )}
     </FriendContainer>
   );
 };
