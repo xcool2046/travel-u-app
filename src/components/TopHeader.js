@@ -112,8 +112,6 @@ const TopHeader = ({ activeTab, setActiveTab, userAvatar, onAvatarChange }) => {
   const avatarVariants = {
     hover: {
       scale: 1.1,
-      borderColor: "var(--primary-color)",
-      boxShadow: "0 4px 16px rgba(99, 102, 241, 0.3)",
       transition: { duration: 0.2 }
     },
     tap: {
@@ -125,9 +123,6 @@ const TopHeader = ({ activeTab, setActiveTab, userAvatar, onAvatarChange }) => {
   const navItemVariants = {
     hover: {
       scale: 1.05,
-      background: "rgba(99, 102, 241, 0.1)",
-      borderColor: "var(--primary-color)",
-      boxShadow: "var(--shadow-lg)",
       transition: { duration: 0.2 }
     },
     tap: {

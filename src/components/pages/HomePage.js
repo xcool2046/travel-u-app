@@ -246,8 +246,6 @@ const HomePage = () => {
     hover: {
       y: -8,
       scale: 1.02,
-      boxShadow: "var(--shadow-xl)",
-      borderColor: "rgba(99, 102, 241, 0.3)",
       transition: { duration: 0.3 }
     }
   };
@@ -255,7 +253,6 @@ const HomePage = () => {
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      boxShadow: "var(--shadow-lg)",
       transition: { duration: 0.2 }
     },
     tap: {

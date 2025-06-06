@@ -130,9 +130,6 @@ const Sidebar = () => {
     hover: {
       y: -8,
       scale: 1.02,
-      boxShadow: "var(--shadow-xl)",
-      borderColor: "rgba(99, 102, 241, 0.5)",
-      background: "rgba(255, 255, 255, 0.98)",
       transition: { duration: 0.3 }
     },
     tap: {
