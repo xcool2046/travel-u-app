@@ -55,34 +55,6 @@ const ContentDisplay = ({ activeTab }) => {
     }
   };
 
-  const PlaceholderPage = ({ title, message }) => (
-    <div style={{
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-      padding: '2rem',
-      color: 'var(--text-secondary)'
-    }}>
-      <h2 style={{ 
-        color: 'var(--primary-color)', 
-        marginBottom: '1rem',
-        fontSize: 'clamp(1.5rem, 3vw, 2rem)'
-      }}>
-        {title}
-      </h2>
-      <p style={{ 
-        fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-        lineHeight: 1.6,
-        maxWidth: '600px'
-      }}>
-        {message}
-      </p>
-    </div>
-  );
-
   const renderContent = () => {
     switch (activeTab) {
       case 'home':

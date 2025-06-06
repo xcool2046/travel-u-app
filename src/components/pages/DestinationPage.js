@@ -69,19 +69,6 @@ const ContentArea = styled.div`
   }
 `;
 
-const PageTitle = styled(motion.h1)`
-  text-align: center;
-  color: var(--primary-color);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
-`;
-
 const CategoryGrid = styled.div`
   display: flex;
   flex-direction: column;
