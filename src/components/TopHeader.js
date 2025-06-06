@@ -7,16 +7,17 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   gap: 2rem;
-  border-radius: var(--border-radius) 0 0 0;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 
   @media (max-width: 767px) {
     padding: 1rem;
     gap: 1rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
   }
 `;
 
@@ -57,24 +58,29 @@ const NavItem = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: var(--primary-color);
+  color: var(--text-white);
   border-radius: 50%;
   cursor: pointer;
   font-weight: 700;
   font-size: 16px;
-  border: 2px solid rgba(99, 102, 241, 0.2);
-  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   user-select: none;
+  transition: all 0.3s ease;
 
   ${props => props.active && `
-    background: var(--primary-color);
+    background: rgba(139, 92, 246, 0.4);
     color: var(--text-white);
-    border-color: var(--primary-dark);
+    border-color: rgba(139, 92, 246, 0.6);
     transform: scale(1.1);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 
+      0 12px 24px rgba(139, 92, 246, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
   `}
 
   @media (max-width: 767px) {

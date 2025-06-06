@@ -2,6 +2,9 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import HomePage from './pages/HomePage';
+import FriendPage from './pages/FriendPage';
+import DestinationPage from './pages/DestinationPage';
+import GamePage from './pages/GamePage';
 
 const ContentContainer = styled.div`
   flex: 1;
@@ -85,26 +88,11 @@ const ContentDisplay = ({ activeTab }) => {
       case 'home':
         return <HomePage />;
       case 'friend':
-        return (
-          <PlaceholderPage 
-            title="好友中心" 
-            message="好友功能正在开发中，敬请期待！在这里您将能够管理旅行好友，查看好友动态，分享旅行经历。" 
-          />
-        );
+        return <FriendPage />;
       case 'destination':
-        return (
-          <PlaceholderPage 
-            title="目的地探索" 
-            message="目的地功能正在开发中，敬请期待！在这里您将能够浏览热门目的地，查看详细攻略，获取旅行灵感。" 
-          />
-        );
+        return <DestinationPage />;
       case 'game':
-        return (
-          <PlaceholderPage 
-            title="游戏中心" 
-            message="游戏中心即将上线，敬请期待！在这里您将能够参与旅行相关的趣味游戏，赢取奖励，结识更多朋友。" 
-          />
-        );
+        return <GamePage />;
       default:
         return <HomePage />;
     }

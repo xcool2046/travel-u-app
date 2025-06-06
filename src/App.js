@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Sidebar from './components/Sidebar';
 import TopHeader from './components/TopHeader';
 import ContentDisplay from './components/ContentDisplay';
 
@@ -19,18 +18,26 @@ const AppContainer = styled.div`
 
 const MainContent = styled.div`
   width: 100%;
+  max-width: 1400px;
+  margin: 20px auto;
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   position: relative;
-  border-radius: var(--border-radius) 0 0 0;
-  box-shadow: var(--shadow-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  z-index: 1;
 
-  @media (min-width: 768px) {
-    width: 80%;
+  @media (max-width: 768px) {
+    margin: 10px;
+    border-radius: var(--border-radius);
   }
 `;
 
@@ -108,7 +115,6 @@ function App() {
 
   return (
     <AppContainer>
-      <Sidebar />
       <MainContent>
         <TopHeader 
           activeTab={activeTab}

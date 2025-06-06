@@ -12,6 +12,8 @@ const HomeContainer = styled.div`
   padding: 2rem;
   box-sizing: border-box;
   overflow-y: auto;
+  position: relative;
+  z-index: 2;
 
   @media (max-width: 767px) {
     padding: 1.5rem;
@@ -32,12 +34,13 @@ const Title = styled(motion.h1)`
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-align: center;
   line-height: 1.2;
+  text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
 `;
 
 const Subtitle = styled(motion.p)`
@@ -67,17 +70,20 @@ const FeatureGrid = styled(motion.div)`
 `;
 
 const FeatureCard = styled(motion.div)`
-  background: var(--bg-card);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 2.5rem 2rem;
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &::before {
     content: '';
@@ -93,6 +99,14 @@ const FeatureCard = styled(motion.div)`
 
   &:hover::before {
     opacity: 1;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 32px 64px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
   @media (max-width: 767px) {
@@ -142,10 +156,16 @@ const FeatureButton = styled(motion.button)`
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
-  box-shadow: var(--shadow-md);
+  box-shadow: 
+    0 8px 16px rgba(139, 92, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
   
   &:hover {
-    box-shadow: var(--shadow-lg);
+    box-shadow: 
+      0 12px 24px rgba(139, 92, 246, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
   }
 `;
 
@@ -196,20 +216,20 @@ const StatLabel = styled.div`
 const HomePage = () => {
   const features = [
     {
-      icon: '🤝',
-      title: '智能匹配',
+      icon: '🤖',
+      title: '智配同行',
       description: '基于兴趣爱好、旅行偏好和时间安排，为您精准匹配志同道合的旅行伙伴，让每次出行都充满惊喜。',
       action: '开始匹配'
     },
     {
-      icon: '🗺️',
-      title: '目的地推荐',
+      icon: '🎯',
+      title: '智推探地',
       description: 'AI智能分析您的偏好，结合实时天气、热门景点和用户评价，为您推荐最适合的旅行目的地。',
       action: '探索目的地'
     },
     {
-      icon: '📋',
-      title: '行程规划',
+      icon: '🧠',
+      title: '智行规划',
       description: '自动生成个性化旅行路线，包含交通、住宿、美食推荐，让您的旅行规划变得轻松简单。',
       action: '制定计划'
     }
@@ -270,7 +290,7 @@ const HomePage = () => {
       >
         <HeroSection>
           <Title variants={itemVariants}>
-            旅U - 发现旅伴，探索世界
+            旅U - 智能旅行伙伴
           </Title>
           <Subtitle variants={itemVariants}>
             智能旅行社交平台，连接全球旅行者。无论您是独自背包客，还是寻找旅行伙伴的探险家，
